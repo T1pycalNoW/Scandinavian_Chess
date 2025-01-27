@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     public int a2 = 0;
     public int b2 = 0;
 
+    //Hello my nami is Mario
+
     void Start()
     {
         // Перенос массива GameObject в массив массивов Square
@@ -52,7 +54,7 @@ public class GameManager : MonoBehaviour
     }
     public void SetPosition(string str)
     {
-        //Метод устанавливает позицию на доске по данному коду, код должен быть вида {Фигура, первая координата, вторая координата}, например: k34w78b00
+        
 
         int i = 0;
         char name = ' ';
