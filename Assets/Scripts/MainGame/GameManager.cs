@@ -1,4 +1,5 @@
 using System;
+using Mirror;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject EscapeMenu;
     public Color SideToMove = Color.Black;
     public string CurrentGameText;
+    public ChessGameOnline chessGameOnline;
     public bool ActiveManager;
     public bool canMove = true;
     public bool GreenBoxCopyExist;
@@ -30,8 +32,6 @@ public class GameManager : MonoBehaviour
     public int a2 = 0;
     public int b2 = 0;
 
-    //Hello my nami is Mario
-
     void Start()
     {
         // Перенос массива GameObject в массив массивов Square
@@ -42,11 +42,12 @@ public class GameManager : MonoBehaviour
                 BoardReady[i, j] = new Square(Field[m], i, j);
             }
         }
-        
-            if (ActiveManager)
+
+        if (ActiveManager)
         {
             ClearBoard();
             CurrentGameText = "";
+            Debug.Log("Yes");
             SetPosition("b03b04b05b14b30b38b40b41b47b48b50b58b74b83b84b85w33w34w35w43k44w45w53w54w55");
             SideToMove = Color.Black;
             GameObject.FindGameObjectWithTag("InformationManager").GetComponent<InformationScript>().CurrentText = "";
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
     }
     public void SetPosition(string str)
     {
-        
+        //Метод устанавливает позицию на доске по данному коду, код должен быть вида {Фигура, первая координата, вторая координата}, например: k34w78b00
 
         int i = 0;
         char name = ' ';
@@ -400,6 +401,16 @@ public class GameManager : MonoBehaviour
                         {
                             if (BoardReady[coo1 + 2, coo2].FigureColor == square.FigureColor || (coo1+2 == 8 && coo2 == 0) || (coo1+2 == 8 && coo2 == 8))
                             {
+                                if(BoardReady[coo1 + 1, coo2].FigureColor == Color.Black && ActiveManager)
+                                {
+                                    CurrentGameText += $"b{coo1 + 1}{coo2}";
+                                }
+
+                                else if(ActiveManager)
+                                {
+                                    CurrentGameText += $"w{coo1 + 1}{coo2}";
+                                }
+
                                 SearchChild(BoardReady[coo1 + 1, coo2].GO, "Figure").GetComponent<Image>().sprite = null;
                                 BoardReady[coo1 + 1, coo2].HasFigure = false;
                                 BoardReady[coo1 + 1, coo2].FigureColor = Color.None;
@@ -427,6 +438,16 @@ public class GameManager : MonoBehaviour
                         {
                             if (BoardReady[coo1 - 2, coo2].FigureColor == square.FigureColor || (coo1-2 == 0 && coo2 == 0) || (coo1-2 == 0 && coo2 == 8))
                             {
+                                if(BoardReady[coo1 - 1, coo2].FigureColor == Color.Black && ActiveManager)
+                                {
+                                    CurrentGameText += $"b{coo1 - 1}{coo2}";
+                                }
+
+                                else if (ActiveManager)
+                                {
+                                    CurrentGameText += $"w{coo1 - 1}{coo2}";
+                                }
+
                                 SearchChild(BoardReady[coo1 - 1, coo2].GO, "Figure").GetComponent<Image>().sprite = null;
                                 BoardReady[coo1 - 1, coo2].HasFigure = false;
                                 BoardReady[coo1 - 1, coo2].FigureColor = Color.None;
@@ -455,6 +476,16 @@ public class GameManager : MonoBehaviour
                         {
                             if (BoardReady[coo1, coo2 + 2].FigureColor == square.FigureColor || (coo1 == 8 && coo2 +2 == 8) || (coo1 == 0 && coo2+2 == 8))
                             {
+                                if(BoardReady[coo1, coo2 + 1].FigureColor == Color.Black && ActiveManager)
+                                {
+                                    CurrentGameText += $"b{coo1}{coo2 + 1}";
+                                }
+
+                                else if (ActiveManager)
+                                {
+                                    CurrentGameText += $"w{coo1}{coo2 + 1}";
+                                }
+
                                 SearchChild(BoardReady[coo1, coo2 + 1].GO, "Figure").GetComponent<Image>().sprite = null;
                                 BoardReady[coo1, coo2 + 1].HasFigure = false;
                                 BoardReady[coo1, coo2 + 1].FigureColor = Color.None;
@@ -483,6 +514,15 @@ public class GameManager : MonoBehaviour
                         {
                             if (BoardReady[coo1, coo2 - 2].FigureColor == square.FigureColor || (coo1 == 8 && coo2 - 2 == 0) || (coo1 == 0 && coo2 - 2 == 0)) 
                             {
+                                if(BoardReady[coo1, coo2 - 1].FigureColor == Color.Black && ActiveManager)
+                                {
+                                    CurrentGameText += $"b{coo1}{coo2 - 1}";
+                                }
+
+                                else if (ActiveManager)
+                                {
+                                    CurrentGameText += $"w{coo1}{coo2 - 1}";
+                                }
                                 SearchChild(BoardReady[coo1, coo2 - 1].GO, "Figure").GetComponent<Image>().sprite = null;
                                 BoardReady[coo1, coo2 - 1].HasFigure = false;
                                 BoardReady[coo1, coo2 - 1].FigureColor = Color.None;
@@ -498,6 +538,11 @@ public class GameManager : MonoBehaviour
         {
 
         }
+
+        /*if(isLocalPlayer)
+        {
+            chessGameOnline.CmdUpdateBoardState(ScanBoard());
+        }*/
     }
 
     // меняет местами фигуры и их параметры
@@ -649,6 +694,45 @@ public class GameManager : MonoBehaviour
         {
             EscapeMenu.SetActive(true);
         }
+
+        if (chessGameOnline != null)
+        {
+            SetPosition(chessGameOnline.BoardState);
+        }
+    }
+
+    public string ScanBoard()
+    {
+        string BoardPlacement = "";
+
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                if(BoardReady[i,j] != null)
+                {
+                    if (BoardReady[i, j].HasFigure)
+
+                    {
+                        if (SearchChild(BoardReady[i, j].GO, "Figure").GetComponent<Image>().sprite == WhiteKing)
+                        {
+                            BoardPlacement += $"k{i}{j}";
+                        }
+                        else if (SearchChild(BoardReady[i, j].GO, "Figure").GetComponent<Image>().sprite == WhitePawn)
+                        {
+                            BoardPlacement += $"w{i}{j}";
+                        }
+                        else
+                        {
+                            BoardPlacement += $"b{i}{j}";
+                        }
+                    }
+                }
+                
+            }
+        }
+        
+        return BoardPlacement;
     }
 }
 

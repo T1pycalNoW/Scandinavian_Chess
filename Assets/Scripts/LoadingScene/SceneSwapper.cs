@@ -1,4 +1,5 @@
 using System;
+using Mirror;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -64,7 +65,7 @@ public class SceneSwapper : MonoBehaviour
             }
             else
             {
-                Debug.Log("Not foundedGame");
+                Debug.Log("Not foundedAnalysis");
             }
         }
         

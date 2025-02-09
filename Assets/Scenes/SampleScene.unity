@@ -291,6 +291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -647,6 +650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -778,6 +784,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -909,6 +918,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -1419,6 +1431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -1551,6 +1566,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -1889,6 +1907,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -2095,6 +2116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -2376,6 +2400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -2393,6 +2420,7 @@ GameObject:
   - component: {fileID: 321753253}
   - component: {fileID: 321753254}
   - component: {fileID: 321753255}
+  - component: {fileID: 321753256}
   m_Layer: 0
   m_Name: --GameManager--
   m_TagString: GameManager
@@ -2520,6 +2548,7 @@ MonoBehaviour:
   EscapeMenu: {fileID: 934203684}
   SideToMove: 0
   CurrentGameText: 
+  chessGameOnline: {fileID: 321753256}
   ActiveManager: 0
   canMove: 1
   GreenBoxCopyExist: 0
@@ -2546,6 +2575,23 @@ MonoBehaviour:
   GreenBoxArray: []
   timerToDestroy: 7
   canDestroy: 0
+--- !u!114 &321753256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321753252}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460b524ce05117841a64403a7dab5f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  gameManager: {fileID: 321753254}
+  BoardState: 
 --- !u!1 &330030082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,6 +2999,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -3278,6 +3327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -3639,6 +3691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -4405,6 +4460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -4461,6 +4519,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -4971,6 +5032,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -5177,6 +5241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -5383,6 +5450,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -6323,6 +6393,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -6754,6 +6827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -6810,6 +6886,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -7016,6 +7095,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -7300,6 +7382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -7656,6 +7741,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -8053,6 +8141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -8528,6 +8619,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -8778,6 +8872,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -9175,6 +9272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -9306,6 +9406,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -9362,6 +9465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -9493,6 +9599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -10299,6 +10408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -10355,6 +10467,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -10411,6 +10526,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -10692,6 +10810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -10973,6 +11094,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -11298,6 +11422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -11504,6 +11631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -11604,6 +11734,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -11735,6 +11868,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -12152,6 +12288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -12283,6 +12422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -12414,6 +12556,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -12470,6 +12615,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -12526,6 +12674,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -12807,6 +12958,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -12943,6 +13097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -13074,6 +13231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -13312,6 +13472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -13368,6 +13531,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -13424,6 +13590,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -13480,6 +13649,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -13536,6 +13708,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -13742,6 +13917,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -13798,6 +13976,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -13929,6 +14110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -14128,6 +14312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -14259,6 +14446,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -14448,6 +14638,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -14879,6 +15072,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -16096,6 +16292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -16302,6 +16501,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -16358,6 +16560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -16683,6 +16888,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -17087,6 +17295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -18160,6 +18371,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -18216,6 +18430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -18497,6 +18714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -18628,6 +18848,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -18684,6 +18907,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -18740,6 +18966,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -19021,6 +19250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -19152,6 +19384,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -19208,6 +19443,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -19264,6 +19502,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -19395,6 +19636,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -19527,6 +19771,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -19883,6 +20130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -20014,6 +20264,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -20145,6 +20398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -20242,6 +20498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}
@@ -20673,6 +20932,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398a3b1b1d100d642b7e281ee43dc21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   gameManager: {fileID: 321753254}
   puzzleManager: {fileID: 0}
   BoxPrefab: {fileID: 6247607250334336180, guid: 1d01d3f25df9d6e43a236d99bb979366, type: 3}

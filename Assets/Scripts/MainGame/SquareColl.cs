@@ -1,9 +1,10 @@
+using Mirror;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.UI;
 
-public class SquareColl : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class SquareColl : NetworkBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public GameManager gameManager;
     public PuzzleManager puzzleManager;
@@ -27,6 +28,8 @@ public class SquareColl : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 gameManager.MoveFigures(gameManager.GreenBoxCopy, this.gameObject);
 
                 gameManager.TakeFigure(gameManager.BoardReady[coo1, coo2], coo1, coo2);
+
+                Debug.Log(gameManager.ScanBoard());
             }
 
             Destroy(gameManager.SearchChild(gameManager.GreenBoxCopy, "GreenBoxN"));

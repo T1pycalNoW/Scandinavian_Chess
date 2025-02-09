@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnalysisManager : MonoBehaviour
 {
@@ -38,9 +39,16 @@ public class AnalysisManager : MonoBehaviour
             {
                 if (CurrentGameText.Length - CurrentIndex - 1 > 0)
                 {
-                    gameManager.DoMoves(Convert.ToInt32(CurrentGameText[CurrentIndex].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex + 1].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex + 2].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex + 3].ToString()));
-                
-                    CurrentIndex+=4;
+                    if(CurrentGameText[CurrentIndex+4].ToString() != "b" && CurrentGameText[CurrentIndex+4].ToString() != "w")
+                    {
+                        gameManager.DoMoves(Convert.ToInt32(CurrentGameText[CurrentIndex].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex + 1].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex + 2].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex + 3].ToString()));
+                        CurrentIndex+=4;
+                    }
+                    else
+                    {
+                        gameManager.TakeFigure(gameManager.BoardReady[Convert.ToInt32(CurrentGameText[CurrentIndex+5].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex+6].ToString())], Convert.ToInt32(CurrentGameText[CurrentIndex+5].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex+6].ToString()));
+                        CurrentIndex+=7;
+                    }
                 }
             }
 
@@ -48,9 +56,28 @@ public class AnalysisManager : MonoBehaviour
             {
                 if (CurrentIndex - 3 > 0)
                 {
-                    gameManager.DoMoves(Convert.ToInt32(CurrentGameText[CurrentIndex - 2].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex - 1].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex - 4].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex - 3].ToString()));
-                
-                    CurrentIndex -=4;
+                    if(CurrentGameText[CurrentIndex-3].ToString() == "b" || CurrentGameText[CurrentIndex-3].ToString() == "w")
+                    {
+                        if(CurrentGameText[CurrentIndex-3].ToString() != "b")
+                        {
+                            gameManager.SearchChild(gameManager.BoardReady[Convert.ToInt32(CurrentGameText[CurrentIndex+5].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex+6].ToString())].GO, "Figure").GetComponent<Image>().sprite = gameManager.BlackPawn;
+                            gameManager.SearchChild(gameManager.BoardReady[Convert.ToInt32(CurrentGameText[CurrentIndex+5].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex+6].ToString())].GO, "Figure").SetActive(true);
+                            gameManager.BoardReady[Convert.ToInt32(CurrentGameText[CurrentIndex+5].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex+6].ToString())].HasFigure = false;
+                            gameManager.BoardReady[Convert.ToInt32(CurrentGameText[CurrentIndex+5].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex+6].ToString())].FigureColor = Color.Black;
+                            CurrentIndex -=3;
+                        }
+                        else
+                        {
+                            gameManager.SearchChild(gameManager.BoardReady[Convert.ToInt32(CurrentGameText[CurrentIndex+5].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex+6].ToString())].GO, "Figure").GetComponent<Image>().sprite = gameManager.WhitePawn;
+                            gameManager.SearchChild(gameManager.BoardReady[Convert.ToInt32(CurrentGameText[CurrentIndex+5].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex+6].ToString())].GO, "Figure").SetActive(true);
+                            gameManager.BoardReady[Convert.ToInt32(CurrentGameText[CurrentIndex+5].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex+6].ToString())].HasFigure = false;
+                            gameManager.BoardReady[Convert.ToInt32(CurrentGameText[CurrentIndex+5].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex+6].ToString())].FigureColor = Color.White;
+                            CurrentIndex -=3;
+                        }
+                        
+                        gameManager.DoMoves(Convert.ToInt32(CurrentGameText[CurrentIndex - 2].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex - 1].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex - 4].ToString()), Convert.ToInt32(CurrentGameText[CurrentIndex - 3].ToString()));
+                        CurrentIndex -=4;
+                    }
                 }
             }
         }
