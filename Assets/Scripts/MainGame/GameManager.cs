@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 0; j < 9; j++, m++)
             {
-                BoardReady[i, j] = new Square(Field[m], i, j);
+                //BoardReady[i, j] = new Square(Field[m], i, j);
             }
         }
 
@@ -736,33 +736,10 @@ public class GameManager : MonoBehaviour
     }
 }
 
-public class Square
-{
-    public GameObject GO;
-    public int ID1;
-    public int ID2;
-    public Color FigureColor = Color.None;
-    public bool HasFigure = false;
-
-    public Square(GameObject _GO, int _ID1, int _ID2)
-    {
-        GO = _GO;
-        ID1 = _ID1;
-        ID2 = _ID2;
-    }
-}
-
 public class Position
 {
     public string ID;
     public string Name;
-}
-
-public enum Color
-{
-    White,
-    Black,
-    None
 }
 
 public enum Destination

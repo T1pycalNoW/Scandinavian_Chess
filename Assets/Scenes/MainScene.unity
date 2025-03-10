@@ -676,7 +676,7 @@ MonoBehaviour:
   editorAutoStart: 0
   sendRate: 60
   offlineScene: Assets/Scenes/MainScene.unity
-  onlineScene: Assets/Scenes/SampleScene.unity
+  onlineScene: Assets/Scenes/BoardNew.unity
   offlineSceneLoadDelay: 0
   transport: {fileID: 556643127}
   networkAddress: localhost
@@ -684,10 +684,15 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 2491689940985023576, guid: 90f8126f9ff9a6d4c997b408b97ccfaa, type: 3}
+  playerPrefab: {fileID: 1609244136839625441, guid: 90f8126f9ff9a6d4c997b408b97ccfaa, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
-  spawnPrefabs: []
+  spawnPrefabs:
+  - {fileID: 7973419547875356612, guid: eb673d66790396743b8dd75bf5b449c5, type: 3}
+  - {fileID: 2865434608275752988, guid: d7ca6ab4c7f497e49ac281a817b8855d, type: 3}
+  - {fileID: 347442373778247825, guid: df5a6926e6e804047bb89d7cc3a8152a, type: 3}
+  - {fileID: 2703962979780270081, guid: 825ee0da1ce2d7844950f6ed772c276a, type: 3}
+  - {fileID: 1289061904672827512, guid: 44689cf682d65c84484a92d47d6025fe, type: 3}
   exceptionsDisconnect: 1
   snapshotSettings:
     bufferTimeMultiplier: 2

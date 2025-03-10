@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.UI;
 
-public class SquareColl : NetworkBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class SquareColl : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public GameManager gameManager;
     public PuzzleManager puzzleManager;

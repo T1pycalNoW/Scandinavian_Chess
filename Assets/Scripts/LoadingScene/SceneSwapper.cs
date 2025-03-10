@@ -78,7 +78,7 @@ public class SceneSwapper : MonoBehaviour
 
         Debug.Log("Main");
 
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("BoardNew");
     }
 
     public void LoadPuzzle ()
