@@ -10,6 +10,9 @@ public class BasicBoardScript : NetworkBehaviour
     private Vector2 Offset = new Vector2(-4, 4);
     public GameObject BlackSquarePrefab; // Префаб черной ячейки
     public GameObject WhiteSquarePrefab; // Префаб белой ячейки
+    public GameObject BoxPrefab; // Префаб для BoxPrefab
+    public DefaultGameManagerScript MainGameManager;
+    public AllGreenBoxesController GreenBoxController;
 
     public override void OnStartServer()
     {
@@ -34,6 +37,9 @@ public class BasicBoardScript : NetworkBehaviour
 
                 // Спавним ячейку на сервере и синхронизируем с клиентами
                 NetworkServer.Spawn(squareGO);
+                squareGO.AddComponent<GreenBoxManagerScript>();
+
+                SetGreenBoxScriptParametrs(squareGO.GetComponent<GreenBoxManagerScript>());
 
                 // Получаем компонент Square и настраиваем его
                 Square square = squareGO.GetComponent<Square>();
@@ -45,5 +51,12 @@ public class BasicBoardScript : NetworkBehaviour
                 BoardReady[i, j] = square;
             }
         }
+    }
+
+    private void SetGreenBoxScriptParametrs (GreenBoxManagerScript GreenBoxScript)
+    {
+        GreenBoxScript.BoxPrefab = BoxPrefab;
+        GreenBoxScript.MainGameManager = MainGameManager;
+        GreenBoxScript.GreenBoxController = GreenBoxController;
     }
 }

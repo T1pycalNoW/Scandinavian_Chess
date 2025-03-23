@@ -44,10 +44,10 @@ public class Square : NetworkBehaviour
         // Получаем объект игрока
         PlayerScript player = NetworkClient.localPlayer?.GetComponent<PlayerScript>();
 
-        if (player != null)
+        /*if (player != null)
         {
             // Отправляем запрос на сервер через объект игрока
             player.CmdSetParent(2, 2, GetComponent<NetworkIdentity>());
-        }
+        }*/
     }
 }

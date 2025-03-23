@@ -3166,6 +3166,9 @@ MonoBehaviour:
   syncInterval: 0
   BlackSquarePrefab: {fileID: 2703962979780270081, guid: 825ee0da1ce2d7844950f6ed772c276a, type: 3}
   WhiteSquarePrefab: {fileID: 1289061904672827512, guid: 44689cf682d65c84484a92d47d6025fe, type: 3}
+  BoxPrefab: {fileID: 8435994936042148085, guid: f48114b7d12bcb74e91588bc5de98770, type: 3}
+  MainGameManager: {fileID: 1885946373}
+  GreenBoxController: {fileID: 1802237272}
 --- !u!4 &432147037
 Transform:
   m_ObjectHideFlags: 0
@@ -11060,6 +11063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1885946372}
   - component: {fileID: 1885946373}
+  - component: {fileID: 1885946374}
   m_Layer: 0
   m_Name: --DefaultGameManager--
   m_TagString: Untagged
@@ -11094,11 +11098,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925aa964e5e20a044ae961af403ef62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   BasicBoard: {fileID: 0}
   SideToMove: 1
   WhiteKing: {fileID: 21300000, guid: 5c90c046a7266614ea0605a776fd09da, type: 3}
   ActiveManager: 1
   CurrentGameText: 
+--- !u!114 &1885946374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885946371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 370295827
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1886561955
 GameObject:
   m_ObjectHideFlags: 0

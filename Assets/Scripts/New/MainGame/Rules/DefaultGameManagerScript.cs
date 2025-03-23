@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using Mirror;
 
-public class DefaultGameManagerScript : MonoBehaviour
+public class DefaultGameManagerScript : NetworkBehaviour
 {
     public BasicBoardScript BasicBoard;
     public Color SideToMove = Color.Black;
@@ -239,7 +240,7 @@ public class DefaultGameManagerScript : MonoBehaviour
         }
             if (coo1 != 7 && coo1 != 8)
             {
-                if (BasicBoardScript.BoardReady[coo1 + 1, coo2].FigureColor != square.FigureColor)
+                if ((BasicBoardScript.BoardReady[coo1 + 1, coo2].FigureColor == Color.Black && square.FigureColor == Color.White) || (BasicBoardScript.BoardReady[coo1 + 1, coo2].FigureColor == Color.White && square.FigureColor == Color.Black)) 
                 {
                     if (HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 + 1, coo2].GO, "Figure"))
                     {
@@ -264,10 +265,12 @@ public class DefaultGameManagerScript : MonoBehaviour
                                     CurrentGameText += $"w{coo1 + 1}{coo2}";
                                 }
 
-                                HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 + 1, coo2].GO, "Figure").GetComponent<SpriteRenderer>().sprite = null;
+                                //HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 + 1, coo2].GO, "Figure").GetComponent<SpriteRenderer>().sprite = null;
                                 BasicBoardScript.BoardReady[coo1 + 1, coo2].HasFigure = false;
                                 BasicBoardScript.BoardReady[coo1 + 1, coo2].FigureColor = Color.None;
-                                HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 + 1, coo2].GO, "Figure").SetActive(false);
+                                //HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 + 1, coo2].GO, "Figure").SetActive(false);
+                                
+                                NetworkServer.Destroy(HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 + 1, coo2].GO, "Figure"));
                             }
                         }
                     }
@@ -276,7 +279,7 @@ public class DefaultGameManagerScript : MonoBehaviour
 
             if (coo1 != 0 && coo1 != 1)
             {
-                if (BasicBoardScript.BoardReady[coo1 - 1, coo2].FigureColor != square.FigureColor)
+                if ((BasicBoardScript.BoardReady[coo1 - 1, coo2].FigureColor == Color.Black && square.FigureColor == Color.White) || (BasicBoardScript.BoardReady[coo1 - 1, coo2].FigureColor == Color.White && square.FigureColor == Color.Black))
                 {
                     if (HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 - 1, coo2].GO, "Figure"))
                     {
@@ -301,10 +304,12 @@ public class DefaultGameManagerScript : MonoBehaviour
                                     CurrentGameText += $"w{coo1 - 1}{coo2}";
                                 }
 
-                                HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 - 1, coo2].GO, "Figure").GetComponent<SpriteRenderer>().sprite = null;
+                                //HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 - 1, coo2].GO, "Figure").GetComponent<SpriteRenderer>().sprite = null;
                                 BasicBoardScript.BoardReady[coo1 - 1, coo2].HasFigure = false;
                                 BasicBoardScript.BoardReady[coo1 - 1, coo2].FigureColor = Color.None;
-                                HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 - 1, coo2].GO, "Figure").SetActive(false);
+                                //HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 - 1, coo2].GO, "Figure").SetActive(false);
+                            
+                                NetworkServer.Destroy(HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1 - 1, coo2].GO, "Figure"));
                             }
                         }
                     }
@@ -314,7 +319,7 @@ public class DefaultGameManagerScript : MonoBehaviour
 
             if (coo2 != 7 && coo2 != 8)
             {
-                if (BasicBoardScript.BoardReady[coo1, coo2 + 1].FigureColor != square.FigureColor)
+                if ((BasicBoardScript.BoardReady[coo1, coo2 + 1].FigureColor == Color.Black && square.FigureColor == Color.White) || (BasicBoardScript.BoardReady[coo1, coo2 + 1].FigureColor == Color.White && square.FigureColor == Color.Black))
                 {
                     if (HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2+1].GO, "Figure"))
                     {
@@ -339,10 +344,12 @@ public class DefaultGameManagerScript : MonoBehaviour
                                     CurrentGameText += $"w{coo1}{coo2 + 1}";
                                 }
 
-                                HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2 + 1].GO, "Figure").GetComponent<SpriteRenderer>().sprite = null;
+                                //HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2 + 1].GO, "Figure").GetComponent<SpriteRenderer>().sprite = null;
                                 BasicBoardScript.BoardReady[coo1, coo2 + 1].HasFigure = false;
                                 BasicBoardScript.BoardReady[coo1, coo2 + 1].FigureColor = Color.None;
-                                HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2 + 1].GO, "Figure").SetActive(false);
+                                //HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2 + 1].GO, "Figure").SetActive(false);
+
+                                NetworkServer.Destroy(HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2 + 1].GO, "Figure"));
                             }
                         }
                     }
@@ -352,7 +359,7 @@ public class DefaultGameManagerScript : MonoBehaviour
 
             if (coo2 != 1 && coo2 != 0)
             {
-                if (BasicBoardScript.BoardReady[coo1, coo2 - 1].FigureColor != square.FigureColor)
+                if ((BasicBoardScript.BoardReady[coo1, coo2 - 1].FigureColor == Color.Black && square.FigureColor == Color.White) || (BasicBoardScript.BoardReady[coo1, coo2 - 1].FigureColor == Color.White && square.FigureColor == Color.Black))
                 {
                     if (HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2-1].GO, "Figure"))
                     {
@@ -376,10 +383,12 @@ public class DefaultGameManagerScript : MonoBehaviour
                                 {
                                     CurrentGameText += $"w{coo1}{coo2 - 1}";
                                 }
-                                HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2 - 1].GO, "Figure").GetComponent<SpriteRenderer>().sprite = null;
+                                //HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2 - 1].GO, "Figure").GetComponent<SpriteRenderer>().sprite = null;
                                 BasicBoardScript.BoardReady[coo1, coo2 - 1].HasFigure = false;
                                 BasicBoardScript.BoardReady[coo1, coo2 - 1].FigureColor = Color.None;
-                                HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2 - 1].GO, "Figure").SetActive(false);
+                                //HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2 - 1].GO, "Figure").SetActive(false);
+
+                                NetworkServer.Destroy(HelpfulMode.SearchChild(BasicBoardScript.BoardReady[coo1, coo2 - 1].GO, "Figure"));
                             }
                         }
                     }
@@ -412,15 +421,15 @@ public class DefaultGameManagerScript : MonoBehaviour
 
     public void MoveFigures(GameObject G1, GameObject G2)
     {
+        PlayerScript player = NetworkClient.localPlayer?.GetComponent<PlayerScript>();
+
         UpdateCurrentFigure(G1);
 
         Square S1 = null;
         Square S2 = null;
         Color color = Color.None;
-
-
-        CurrentFigure.transform.position = G2.transform.position;
-        CurrentFigure.transform.SetParent(null);
+        int a1 = 0;
+        int a2 = 0;
 
         for (int i = 0; i < 9; i++)
         {
@@ -430,11 +439,23 @@ public class DefaultGameManagerScript : MonoBehaviour
                 {
                     S1 = BasicBoardScript.BoardReady[i, j];
                 }
+
                 if (BasicBoardScript.BoardReady[i, j].GO == G2)
                 {
                     S2 = BasicBoardScript.BoardReady[i, j];
+                    a1 = i;
+                    a2 = j;
                 }
             }
+        }
+
+        if (player != null)
+        {
+            player.CmdSetParent(a1, a2, S1.GO.GetComponent<NetworkIdentity>());
+        }
+        else
+        {
+            Debug.LogException(new System.Exception("Нет игрока"));
         }
 
         S1.HasFigure = false;
