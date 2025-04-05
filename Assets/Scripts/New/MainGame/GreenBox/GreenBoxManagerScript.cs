@@ -13,7 +13,7 @@ public class GreenBoxManagerScript : MonoBehaviour, IPointerEnterHandler, IPoint
         // Убедимся, что BoxPrefab изначально неактивен
         BoxPrefab.SetActive(false);
     }
- 
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         // Активируем BoxPrefab и устанавливаем его позицию

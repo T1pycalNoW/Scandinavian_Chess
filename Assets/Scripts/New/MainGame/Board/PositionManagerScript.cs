@@ -72,6 +72,8 @@ public class PositionManagerScript : NetworkBehaviour
         if (chessPiece != null)
         {
             chessPiece.SetParent(currentSquare.GetComponent<NetworkIdentity>());
+
+            chessPiece.SetFigureName("Figure");
         }
 
         // Обновляем состояние ячейки

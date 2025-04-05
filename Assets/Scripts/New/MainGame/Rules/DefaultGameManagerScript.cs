@@ -6,6 +6,7 @@ using Mirror;
 
 public class DefaultGameManagerScript : NetworkBehaviour
 {
+    public static DefaultGameManagerScript Instance;
     public BasicBoardScript BasicBoard;
     public Color SideToMove = Color.Black;
     public Sprite WhiteKing;
@@ -19,6 +20,28 @@ public class DefaultGameManagerScript : NetworkBehaviour
     private Destination destination;
     private bool checkedDestination;
     private GameObject CurrentFigure;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    /*public static DefaultGameManagerScript FindInstance ()
+    {
+        if (Instance != null ) return Instance;
+
+        foreach (var obj in NetworkClient.spawned.Values)
+        {
+            var instance = obj.GetComponent<DefaultGameManagerScript>();
+            if (instance != null)
+            {
+                Instance = instance;
+                return instance;
+            }
+        }
+
+        return null;
+    }*/
 
     public bool CheckRules(GameObject G1, GameObject G2)
     {

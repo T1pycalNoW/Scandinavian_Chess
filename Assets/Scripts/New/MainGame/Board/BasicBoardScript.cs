@@ -37,9 +37,10 @@ public class BasicBoardScript : NetworkBehaviour
 
                 // Спавним ячейку на сервере и синхронизируем с клиентами
                 NetworkServer.Spawn(squareGO);
-                squareGO.AddComponent<GreenBoxManagerScript>();
 
-                SetGreenBoxScriptParametrs(squareGO.GetComponent<GreenBoxManagerScript>());
+                //squareGO.AddComponent<GreenBoxManagerScript>();
+
+                //SetGreenBoxScriptParametrs(squareGO.GetComponent<GreenBoxManagerScript>());
 
                 // Получаем компонент Square и настраиваем его
                 Square square = squareGO.GetComponent<Square>();

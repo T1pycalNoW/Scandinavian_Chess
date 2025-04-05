@@ -5,9 +5,16 @@ using Mirror;
 
 public class AllGreenBoxesController : NetworkBehaviour
 {
+    public static AllGreenBoxesController Instance;
     public GameObject ConnectedField;
     public bool GreenBoxExist;
+    public GameObject GreenBox;
     public List<GameObject> GreenBoxArray = new List<GameObject>();
+
+    void Awake()
+    {
+        Instance = this;    
+    }
 
     public void AddCopy (GameObject GreenBoxCopy)
     {

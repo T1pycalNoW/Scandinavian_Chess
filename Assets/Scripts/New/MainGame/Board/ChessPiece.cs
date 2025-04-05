@@ -7,6 +7,8 @@ public class ChessPiece : NetworkBehaviour
 
     [SyncVar(hook = nameof(OnParentChanged))]
     private NetworkIdentity parentIdentity; // Синхронизируем родителя через NetworkIdentity
+    [SyncVar]
+    private string figureName = "Figure";
 
     private void OnActiveChanged(bool oldValue, bool newValue)
     {
@@ -17,6 +19,29 @@ public class ChessPiece : NetworkBehaviour
     public void SetActive(bool active)
     {
         isActive = active; // Изменяем состояние на сервере
+    }
+
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
+        UpdateNameOnClient();
+    }
+
+    [Client]
+    private void UpdateNameOnClient ()
+    {
+        gameObject.name = figureName;
+    }
+    [Server]
+    public void SetFigureName (string newName)
+    {
+        figureName = newName;
+        RpcUpdateName(newName);
+    }
+    [ClientRpc]
+    private void RpcUpdateName (string newName)
+    {
+        gameObject.name = newName;
     }
 
     private void OnParentChanged(NetworkIdentity oldParent, NetworkIdentity newParent)
