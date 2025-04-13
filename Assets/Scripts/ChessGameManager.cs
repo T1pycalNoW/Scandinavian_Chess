@@ -88,8 +88,24 @@ public class ChessGameManager : NetworkBehaviour
 
     public ChessPiece GetPieceAt(int x, int y)
     {
-        if (x >= 0 && x < 9 && y >= 0 && y < 9)
-            return board[x, y];
-        return null;
+        if (!isServer)
+        {
+            foreach (ChessPiece piece in FindObjectsOfType<ChessPiece>())
+            {
+                int pieceX = Mathf.RoundToInt(piece.transform.position.x);
+                int pieceY = Mathf.RoundToInt(piece.transform.position.y);
+                if (pieceX == x && pieceY == y)
+                {
+                    return piece;
+                }  
+            }
+            return null;
+        }
+        else
+        {
+            if (x >= 0 && x < 9 && y >= 0 && y < 9)
+                return board[x, y];
+            return null;
+        }
     }
 }

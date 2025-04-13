@@ -45,6 +45,7 @@ public class PlayerController : NetworkBehaviour
                     {
                         // Выбираем только свои фигуры
                         ChessPiece piece = gameManager.GetPieceAt(cell.x, cell.y);
+                        Debug.Log($"Figure: {piece}");
                         if (piece != null && piece.isWhite == isWhite)
                         {
                             selectedPiece = piece;
@@ -55,11 +56,14 @@ public class PlayerController : NetworkBehaviour
                     {
                         // Отправляем ход на сервер
                         CmdTryMove(selectedPiece.x, selectedPiece.y, cell.x, cell.y);
+                        Debug.Log("TryingToMove");
                         selectedPiece = null;
                     }
                 }
             }
         }
+
+        Debug.Log("Ended");
     }
 
     [Command]
